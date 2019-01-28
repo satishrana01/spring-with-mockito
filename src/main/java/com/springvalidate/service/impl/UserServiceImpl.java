@@ -13,8 +13,11 @@ import org.springframework.stereotype.Service;
 @Service
 public class UserServiceImpl implements UserService{
 
-    @Autowired
-    private AuthorisationService authorisationService;
+    private final AuthorisationService authorisationService;
+    
+    public UserServiceImpl (AuthorisationService authorisationService){
+        this.authorisationService=authorisationService;
+    }
     
     @Override
     public void valideUser(User user) throws NotAuthrized {
