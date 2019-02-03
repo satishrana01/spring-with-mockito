@@ -1,10 +1,11 @@
 package com.springvalidate.model;
 
-import org.springframework.validation.annotation.Validated;
+import com.springvalidate.service.validate.constraints.SpelAssert;
 
 import javax.validation.constraints.NotNull;
 
-@Validated
+@SpelAssert( value="agreementType == AgreementType.AVTALEGIRO ? not ( (beneficiaryAccount == null and beneficiaryName == null) or ( beneficiaryName == null and searchCriteria == null ) ) : true",
+message="Valid searches are beneficiaryAccount, beneficiaryName or beneficiaryName and a search criteria" )
 public class User {
 
     public interface Adult{};

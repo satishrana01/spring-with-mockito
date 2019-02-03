@@ -33,6 +33,7 @@ import static org.mockito.Mockito.when;
 })
 public class UnitTestCaseWithMockito {
 
+    @Inject
     UserService service;
 
     private AuthorisationService authorisationService;
@@ -44,7 +45,7 @@ public class UnitTestCaseWithMockito {
 
         taxAccount = new Account("1234", "TEST");
         authorisationService = Mockito.mock(AuthorisationService.class);
-        service = new UserServiceImpl(authorisationService);
+        //service = new UserServiceImpl(authorisationService);
 
     }
 
