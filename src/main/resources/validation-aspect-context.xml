@@ -4,13 +4,12 @@
 			 xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
 
-	<bean id="validatorFactory"
-		class="org.springframework.validation.beanvalidation.LocalValidatorFactoryBean">
-		
-		</bean>
+	
+	<bean id="parser" class="org.springframework.expression.spel.standard.SpelExpressionParser" />
+
+	<bean id="validator" class="org.springframework.validation.beanvalidation.LocalValidatorFactoryBean"/>
 
 	<bean class="org.springframework.validation.beanvalidation.MethodValidationPostProcessor"/>
 	
-	<bean class="org.springframework.expression.spel.standard.SpelExpressionParser" />
 
 </beans>

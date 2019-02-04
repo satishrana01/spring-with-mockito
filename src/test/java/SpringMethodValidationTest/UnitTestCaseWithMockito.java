@@ -53,7 +53,7 @@ public class UnitTestCaseWithMockito {
     public void testValideUser() throws NotAuthrized {
 
         User user = createUser();
-        when(authorisationService.authorise(any(String.class), any(Predicate.class))).thenReturn(taxAccount);
+       // when(authorisationService.authorise(any(String.class), any(Predicate.class))).thenReturn(taxAccount);
         try {
             service.valideUser(user);
         } catch (Exception e) {
